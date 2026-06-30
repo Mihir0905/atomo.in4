@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="gov-acc" x1="14" y1="12" x2="58" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fb923c"/>
+      <stop offset="1" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+  <rect x="16" y="10" width="34" height="46" rx="4" stroke="url(#gov-acc)" stroke-width="2.8" stroke-linejoin="round"/>
+  <path d="M24 22h18M24 32h18M24 42h10" stroke="url(#gov-acc)" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M46 38l5 5 10-12" stroke="url(#gov-acc)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="52" cy="20" r="10" stroke="url(#gov-acc)" stroke-width="2.6"/>
+  <circle cx="52" cy="20" r="4" fill="#f97316"/>
+</svg>

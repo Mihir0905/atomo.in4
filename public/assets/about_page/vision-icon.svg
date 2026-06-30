@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="vision-bg" x1="12" y1="8" x2="52" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff7ed"/>
+      <stop offset="1" stop-color="#ffedd5"/>
+    </linearGradient>
+    <linearGradient id="vision-stroke" x1="18" y1="20" x2="46" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fb923c"/>
+      <stop offset="1" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="url(#vision-bg)" stroke="#fdba74" stroke-width="1.5"/>
+  <path d="M12 32c0 0 8.5-14 20-14s20 14 20 14s-8.5 14-20 14S12 32 12 32Z" stroke="url(#vision-stroke)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="32" cy="32" r="7.5" stroke="url(#vision-stroke)" stroke-width="2.4"/>
+  <circle cx="32" cy="32" r="3.2" fill="#f97316"/>
+  <path d="M32 18v4M32 42v4M18 32h4M42 32h4" stroke="#fdba74" stroke-width="1.8" stroke-linecap="round"/>
+</svg>

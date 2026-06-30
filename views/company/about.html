@@ -1,0 +1,2586 @@
+<link rel="preload" href="/assets/videos/home-cover/atomo-home-cover.mp4" as="video" type="video/mp4" fetchpriority="high">
+<link rel="preload" href="/assets/videos/home-cover/atomo-home-cover-poster.webp" as="image" fetchpriority="high">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+  :root {
+    --hero-accent: #f97316;
+    --hero-accent-light: #fdba74;
+    --hero-accent-mid: #fb923c;
+    --hero-accent-deep: #ea580c;
+  }
+
+  /* ── Shared typography (matches home.html) ── */
+  .hero-content {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    width: 100%;
+    max-width: 58rem;
+    margin-left: -50px;
+    margin-top: 2.5rem;
+    align-self: flex-start;
+  }
+
+  @media (min-width: 768px) {
+    .hero-content { margin-top: 3.75rem; }
+  }
+
+  @media (max-width: 639px) {
+    .hero-content { margin-left: 0; }
+  }
+
+  .hero-eyebrow,
+  .section-2-eyebrow {
+    display: inline-block;
+    width: max-content;
+    max-width: 100%;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 900;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--hero-accent);
+    -webkit-text-fill-color: var(--hero-accent);
+  }
+
+  .hero-eyebrow {
+    position: relative;
+    z-index: 0;
+    filter: drop-shadow(0 0 14px rgba(249, 115, 22, 0.22));
+    margin: 0 0 1.35rem;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-eyebrow {
+      letter-spacing: 0.13em;
+      filter:
+        drop-shadow(0 1px 2px rgba(0, 0, 0, 0.9))
+        drop-shadow(0 0 16px rgba(0, 0, 0, 0.55));
+    }
+  }
+
+  .section-2-eyebrow { margin: 0 0 1rem; }
+
+  @media (min-width: 640px) {
+    .hero-eyebrow,
+    .section-2-eyebrow {
+      font-size: 0.9375rem;
+      letter-spacing: 0.12em;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-eyebrow,
+    .section-2-eyebrow { font-size: 1rem; }
+  }
+
+  .hero-headline {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1.3125rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.032em;
+    color: #ffffff;
+    margin: 0 0 1.75rem;
+    width: fit-content;
+    max-width: 100%;
+    padding-bottom: 0.05em;
+  }
+
+  .hero-headline__line {
+    display: block;
+    white-space: normal;
+  }
+
+  @media (min-width: 640px) {
+    .hero-headline__line { white-space: nowrap; }
+  }
+
+  .hero-headline__accent { color: var(--hero-accent); }
+
+  @media (min-width: 360px) { .hero-headline { font-size: 1.5rem; } }
+  @media (min-width: 380px) { .hero-headline { font-size: 1.75rem; } }
+  @media (min-width: 480px) { .hero-headline { font-size: 2.125rem; } }
+  @media (min-width: 640px) { .hero-headline { font-size: 2.5rem; } }
+  @media (min-width: 768px) {
+    .hero-headline { font-size: 3.25rem; margin-bottom: 2rem; }
+  }
+  @media (min-width: 1024px) { .hero-headline { font-size: 3.65rem; } }
+  @media (min-width: 1280px) { .hero-headline { font-size: 4.16rem; } }
+
+  .hero-subtitle {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.7;
+    max-width: 43.75rem;
+    color: rgba(255, 255, 255, 0.92);
+    margin: 0 0 3rem;
+  }
+
+  @media (min-width: 640px) { .hero-subtitle { font-size: 1.125rem; } }
+  @media (min-width: 1024px) { .hero-subtitle { font-size: 1.375rem; } }
+
+  .section-2-title {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1.3125rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.032em;
+    color: #3c3c3c;
+    margin: 0;
+    padding-bottom: 0.05em;
+  }
+
+  @media (min-width: 360px) { .section-2-title { font-size: 1.5rem; } }
+  @media (min-width: 380px) { .section-2-title { font-size: 1.75rem; } }
+  @media (min-width: 480px) { .section-2-title { font-size: 2.125rem; } }
+  @media (min-width: 640px) { .section-2-title { font-size: 2.5rem; } }
+  @media (min-width: 768px) { .section-2-title { font-size: 3.25rem; } }
+  @media (min-width: 1024px) { .section-2-title { font-size: 3.65rem; } }
+  @media (min-width: 1280px) { .section-2-title { font-size: 4.16rem; } }
+
+  .section-subtitle {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.7;
+    max-width: 43.75rem;
+    color: #6b7280;
+    margin: 1.75rem 0 0;
+  }
+
+  @media (min-width: 640px) { .section-subtitle { font-size: 1.125rem; } }
+  @media (min-width: 768px) { .section-subtitle { margin-top: 2rem; } }
+  @media (min-width: 1024px) { .section-subtitle { font-size: 1.375rem; } }
+
+  .about-body-text {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 400;
+    line-height: 1.78;
+    color: #6b7280;
+    margin: 0;
+  }
+
+  @media (min-width: 640px) { .about-body-text { font-size: 1.125rem; } }
+  @media (min-width: 1024px) { .about-body-text { font-size: 1.125rem; } }
+
+  .about-section-header { margin-bottom: 2.5rem; }
+
+  @media (min-width: 1024px) {
+    .about-section-header { margin-bottom: 3rem; }
+  }
+
+  /* ── Hero (matches home.html #hero-premium) ── */
+  #about-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-top: var(--nav-height, 60px);
+    height: calc(100svh - var(--nav-height, 60px));
+    min-height: calc(100svh - var(--nav-height, 60px));
+    background: #0a0a0a;
+  }
+
+  #about-hero .hero-video-stack {
+    position: absolute;
+    inset: 0;
+    background: #0a0a0a url('/assets/videos/home-cover/atomo-home-cover-poster.webp') center top / cover no-repeat;
+  }
+
+  #about-hero .hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    background: #000;
+    filter: brightness(0.84) contrast(1.06) saturate(1.02);
+  }
+
+  #about-hero .hero-media__overlay {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+  }
+
+  #about-hero .hero-video-vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 94% 90% at 50% 48%, transparent 72%, rgba(0, 0, 0, 0.04) 92%, rgba(0, 0, 0, 0.07) 100%);
+  }
+
+  #about-hero .hero-inner {
+    width: 100%;
+    min-height: 100%;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+  }
+
+  #about-hero .about-hero__tagline {
+    margin: 0 0 2rem;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.92);
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
+  }
+
+  @media (min-width: 640px) {
+    #about-hero .about-hero__tagline { font-size: 1.125rem; }
+  }
+
+  @media (min-width: 1024px) {
+    #about-hero .hero-video {
+      filter: brightness(0.56) contrast(1.05) saturate(1.02);
+    }
+
+    #about-hero .hero-media__overlay--veil {
+      background: rgba(6, 8, 14, 0.52);
+    }
+
+    #about-hero .hero-media__overlay--content {
+      background: linear-gradient(
+        96deg,
+        rgba(4, 6, 12, 0.78) 0%,
+        rgba(4, 6, 12, 0.58) 36%,
+        rgba(4, 6, 12, 0.32) 58%,
+        rgba(4, 6, 12, 0.16) 100%
+      );
+    }
+
+    #about-hero .hero-media__overlay--depth {
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.48) 0%,
+        transparent 26%,
+        transparent 74%,
+        rgba(0, 0, 0, 0.42) 100%
+      );
+    }
+
+    #about-hero .hero-video-vignette {
+      background:
+        radial-gradient(
+          ellipse 108% 100% at 50% 50%,
+          transparent 42%,
+          rgba(0, 0, 0, 0.18) 72%,
+          rgba(0, 0, 0, 0.38) 100%
+        );
+    }
+
+    #about-hero .hero-headline {
+      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+    }
+
+    #about-hero .hero-headline__accent {
+      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    #about-hero .hero-subtitle,
+    #about-hero .about-hero__tagline {
+      text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
+    }
+  }
+
+  @media (max-width: 767px) {
+    #about-hero {
+      height: calc(100svh - var(--nav-height, 60px));
+      min-height: calc(100svh - var(--nav-height, 60px));
+      overflow: hidden;
+      background: #000;
+    }
+
+    #about-hero .hero-inner {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100%;
+      height: 100%;
+      padding: 0 1.25rem;
+      z-index: 2;
+    }
+
+    #about-hero .hero-content {
+      display: block;
+      width: 100%;
+      max-width: 22rem;
+      margin: 0 auto 0 0;
+      padding: 0;
+      text-align: left;
+    }
+
+    #about-hero .hero-copy-head .hero-eyebrow {
+      margin-bottom: 0.85rem;
+      letter-spacing: 0.14em;
+    }
+
+    #about-hero .hero-headline {
+      margin-bottom: 1.25rem;
+      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
+    }
+
+    #about-hero .hero-headline__accent {
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
+    }
+
+    #about-hero .hero-subtitle {
+      margin-bottom: 1.75rem;
+      font-size: 0.9375rem;
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #about-hero .about-hero__tagline {
+      margin-bottom: 1.5rem;
+      font-size: 0.9375rem;
+    }
+
+    #about-hero .hero-video {
+      filter: brightness(0.62) contrast(1.05) saturate(1.02);
+    }
+
+    #about-hero .hero-media__overlay--veil {
+      background: rgba(6, 8, 14, 0.48);
+    }
+
+    #about-hero .hero-media__overlay--content {
+      background: linear-gradient(
+        96deg,
+        rgba(4, 6, 12, 0.78) 0%,
+        rgba(4, 6, 12, 0.58) 36%,
+        rgba(4, 6, 12, 0.32) 58%,
+        rgba(4, 6, 12, 0.1) 76%,
+        transparent 100%
+      );
+    }
+
+    #about-hero .hero-media__overlay--depth {
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.45) 0%,
+        transparent 28%,
+        transparent 72%,
+        rgba(0, 0, 0, 0.4) 100%
+      );
+    }
+
+    #about-hero .hero-video-vignette {
+      background:
+        radial-gradient(
+          ellipse 110% 100% at 15% 50%,
+          transparent 32%,
+          rgba(0, 0, 0, 0.14) 62%,
+          rgba(0, 0, 0, 0.34) 100%
+        );
+    }
+
+    #about-hero .hero-cta a {
+      width: 100%;
+      justify-content: center;
+      padding: 0.875rem 1.25rem;
+      font-size: 0.9375rem;
+    }
+  }
+
+  /* ── About page layouts ── */
+  /* Section 2 (About Company) — fit-to-screen, no empty space */
+  #about-company {
+    min-height: calc(100svh - var(--nav-height, 60px));
+    display: flex;
+    align-items: stretch;
+  }
+
+  @media (max-width: 1023px) {
+    #about-company {
+      min-height: auto;
+      align-items: stretch;
+    }
+  }
+
+  /* Give breathing space before eyebrow like home sections */
+  #about-company .about-company__inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: clamp(1.75rem, 3.2vw, 2.75rem);
+    padding-bottom: clamp(1.25rem, 2.4vw, 2.25rem);
+  }
+
+  @media (max-width: 1023px) {
+    #about-company .about-company__inner {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+      align-items: stretch;
+    }
+  }
+
+  #about-company .about-company__grid {
+    display: grid;
+    gap: 1.75rem;
+    align-items: start;
+  }
+
+  @media (min-width: 1024px) {
+    #about-company .about-company__grid {
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      grid-template-areas:
+        "header header"
+        "diagram copy";
+      column-gap: clamp(2rem, 4vw, 3.5rem);
+      row-gap: 2rem;
+      align-items: start;
+    }
+  }
+
+  #about-company .about-company__header {
+    margin-bottom: 0.75rem;
+  }
+
+  @media (min-width: 1024px) {
+    #about-company .about-company__header {
+      grid-area: header;
+      margin-bottom: 0;
+      padding-top: 0.35rem; /* small breathing space under section start */
+    }
+  }
+
+  @media (min-width: 1024px) {
+    #about-company .about-company__diagram-wrap { grid-area: diagram; }
+    #about-company .about-company__copy { grid-area: copy; }
+  }
+
+  #about-company .about-company__diagram {
+    margin: 1rem 0 0;
+    max-width: none;
+  }
+
+  @media (min-width: 1024px) {
+    #about-company .about-company__diagram {
+      margin-top: 0.5rem;
+    }
+
+    /* Make diagram fill remaining height (remove empty space below) */
+    #about-company .about-company__diagram {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    #about-company .about-company__diagram-frame {
+      flex: 1;
+      min-height: clamp(22rem, 34vw, 30rem);
+      padding: 1.5rem 1.5rem 1.35rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    #about-company .about-company__diagram svg {
+      flex-shrink: 0;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  #about-company .about-company__diagram-frame {
+    border: 1px solid rgba(59, 130, 246, 0.18);
+    border-radius: 1.25rem;
+    background:
+      radial-gradient(120% 120% at 20% 10%, rgba(37, 99, 235, 0.10) 0%, rgba(255, 255, 255, 0) 55%),
+      radial-gradient(120% 120% at 70% 15%, rgba(124, 58, 237, 0.10) 0%, rgba(255, 255, 255, 0) 58%),
+      radial-gradient(140% 140% at 85% 80%, rgba(236, 72, 153, 0.08) 0%, rgba(255, 255, 255, 0) 60%),
+      linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    box-shadow:
+      0 18px 36px rgba(15, 23, 42, 0.08),
+      0 2px 4px rgba(15, 23, 42, 0.05);
+    padding: 1.25rem 1.25rem 1.15rem;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+  }
+
+  #about-company .about-company__diagram-svg-wrap {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 92%;
+    padding: 0;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #about-company .about-company__diagram svg {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    flex-shrink: 0;
+    margin: 0 auto;
+  }
+
+  #about-company .about-company__diagram-points {
+    margin: 0;
+    margin-top: auto;
+    padding: 1.125rem 0 0;
+    list-style: none;
+    display: grid;
+    gap: 0.875rem;
+    border-top: 1px solid rgba(203, 213, 225, 0.65);
+  }
+
+  @media (min-width: 1024px) {
+    #about-company .about-company__diagram-points {
+      padding-top: 1.25rem;
+      gap: 1rem;
+    }
+  }
+
+  #about-company .about-company__diagram-points li {
+    display: block;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.45;
+    color: #4b5563;
+  }
+
+  @media (min-width: 640px) {
+    #about-company .about-company__diagram-points li {
+      font-size: 0.9375rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    #about-company .about-company__diagram-points li {
+      font-size: 0.9375rem;
+      line-height: 1.5;
+    }
+  }
+
+  #about-company .about-company__diagram-points li::before {
+    content: none;
+  }
+
+  #about-company .about-company__diagram-caption {
+    margin: 1.125rem 0 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: #6b7280;
+  }
+
+  #about-company .about-company__copy {
+    display: grid;
+    gap: 1.125rem;
+  }
+
+  @media (min-width: 1024px) {
+    #about-company .about-company__copy {
+      gap: 1rem;
+    }
+  }
+
+  /* Section 3 (Vision / Mission) — equal cards, aligned rows, fit-to-screen */
+  #about-section-3 {
+    position: relative;
+    background: #ffffff;
+  }
+
+  @media (min-width: 1024px) {
+    #about-section-3 {
+      height: calc(100svh - var(--nav-height, 60px));
+      min-height: calc(100svh - var(--nav-height, 60px));
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    #about-section-3 > .container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  #about-section-3 .about-vm {
+    width: 100%;
+    padding-top: clamp(2.75rem, 5vw, 4.5rem);
+    padding-bottom: clamp(2.75rem, 5vw, 4.5rem);
+  }
+
+  @media (min-width: 1024px) {
+    #about-section-3 .about-vm {
+      padding-top: clamp(1rem, 2.2vh, 1.5rem);
+      padding-bottom: clamp(1rem, 2.2vh, 1.5rem);
+    }
+  }
+
+  #about-section-3 .about-vm__grid {
+    display: grid;
+    gap: 1.75rem;
+    align-items: stretch;
+  }
+
+  @media (min-width: 1024px) {
+    #about-section-3 .about-vm__grid {
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      grid-template-rows: auto auto auto auto auto;
+      column-gap: clamp(1.75rem, 3.5vw, 2.75rem);
+      row-gap: 0;
+      width: 100%;
+      height: auto;
+      max-height: min(64vh, calc(100svh - var(--nav-height, 60px) - 3.5rem));
+      align-items: stretch;
+    }
+  }
+
+  #about-section-3 .about-vm__card {
+    position: relative;
+    border: 1px solid rgba(17, 24, 39, 0.10);
+    border-radius: 1.25rem;
+    background: #ffffff;
+    box-shadow:
+      0 16px 34px rgba(15, 23, 42, 0.06),
+      0 2px 4px rgba(15, 23, 42, 0.04);
+    padding: clamp(1.35rem, 2.6vw, 1.75rem);
+    display: grid;
+    gap: 0;
+  }
+
+  @media (min-width: 1024px) {
+    #about-section-3 .about-vm__card {
+      grid-row: 1 / -1;
+      grid-template-rows: subgrid;
+      min-height: 0;
+      height: auto;
+    }
+
+    #about-section-3 .about-vm__card--vision {
+      grid-column: 1;
+    }
+
+    #about-section-3 .about-vm__card--mission {
+      grid-column: 3;
+    }
+  }
+
+  #about-section-3 .about-vm__badge {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  #about-section-3 .about-vm__badge img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  #about-section-3 .about-vm__eyebrow {
+    display: block;
+    margin: 0 0 0.55rem;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--hero-accent);
+    line-height: 1.2;
+  }
+
+  #about-section-3 .about-vm__title {
+    margin: 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.028em;
+    color: #3c3c3c;
+    line-height: 1.16;
+    text-wrap: balance;
+    font-size: clamp(1.35rem, 2vw, 1.85rem);
+    max-width: none;
+  }
+
+  #about-section-3 .about-vm__rule {
+    width: 2.25rem;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(249, 115, 22, 1), rgba(249, 115, 22, 0.35));
+    border-radius: 9999px;
+    margin: 1rem 0 1.1rem;
+    flex-shrink: 0;
+  }
+
+  #about-section-3 .about-vm__body {
+    margin: 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: clamp(0.9rem, 1vw, 0.98rem);
+    line-height: 1.62;
+    color: #6b7280;
+    max-width: none;
+    align-self: start;
+  }
+
+  /* Center logo + connector */
+  #about-section-3 .about-vm__center {
+    display: none;
+    position: relative;
+    width: clamp(6.5rem, 9vw, 8rem);
+    height: clamp(6.5rem, 9vw, 8rem);
+    border-radius: 9999px;
+    place-items: center;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 1024px) {
+    #about-section-3 .about-vm__center {
+      display: grid;
+      grid-column: 2;
+      grid-row: 1 / -1;
+      align-self: center;
+      justify-self: center;
+    }
+  }
+
+  #about-section-3 .about-vm__center::before,
+  #about-section-3 .about-vm__center::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    border: 1px dashed rgba(17, 24, 39, 0.14);
+  }
+
+  #about-section-3 .about-vm__center::after {
+    inset: 12%;
+    border-style: solid;
+    border-color: rgba(249, 115, 22, 0.16);
+    background: radial-gradient(circle at 35% 35%, rgba(249, 115, 22, 0.08), transparent 55%);
+  }
+
+  #about-section-3 .about-vm__center-line {
+    position: absolute;
+    top: 50%;
+    left: calc(-1 * clamp(1.75rem, 3.5vw, 2.75rem));
+    right: calc(-1 * clamp(1.75rem, 3.5vw, 2.75rem));
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.35), transparent);
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  #about-section-3 .about-vm__center-dot {
+    position: absolute;
+    top: 50%;
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 9999px;
+    background: var(--hero-accent);
+    box-shadow: 0 0 10px rgba(249, 115, 22, 0.45);
+    transform: translateY(-50%);
+  }
+
+  #about-section-3 .about-vm__center-dot--left { left: -0.225rem; }
+  #about-section-3 .about-vm__center-dot--right { right: -0.225rem; }
+
+  #about-section-3 .about-vm__atom-logo {
+    position: relative;
+    z-index: 1;
+    width: 46%;
+    height: 46%;
+    object-fit: contain;
+    display: block;
+    filter: brightness(0) saturate(100%) invert(54%) sepia(86%) saturate(2476%) hue-rotate(360deg) brightness(101%) contrast(96%);
+  }
+
+  @media (min-width: 1024px) and (max-height: 760px) {
+    #about-section-3 .about-vm__grid {
+      max-height: min(60vh, calc(100svh - var(--nav-height, 60px) - 2.5rem));
+    }
+
+    #about-section-3 .about-vm__card {
+      padding: 1.2rem 1.4rem;
+    }
+
+    #about-section-3 .about-vm__badge {
+      width: 3rem;
+      height: 3rem;
+      margin-bottom: 0.65rem;
+    }
+
+    #about-section-3 .about-vm__title {
+      font-size: clamp(1.15rem, 1.7vw, 1.5rem);
+      line-height: 1.14;
+    }
+
+    #about-section-3 .about-vm__rule {
+      margin: 0.8rem 0 0.9rem;
+    }
+
+    #about-section-3 .about-vm__body {
+      font-size: 0.875rem;
+      line-height: 1.55;
+    }
+  }
+
+  #about-ecosystem {
+    --ecosystem-gradient: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #3b82f6 100%);
+    --ecosystem-gradient-soft: linear-gradient(135deg, rgba(236, 72, 153, 0.08) 0%, rgba(139, 92, 246, 0.06) 50%, rgba(59, 130, 246, 0.08) 100%);
+  }
+
+  #about-ecosystem .about-ecosystem__header {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  #about-ecosystem .about-ecosystem__header-row {
+    display: grid;
+    gap: 1.25rem;
+    align-items: start;
+  }
+
+  @media (min-width: 1024px) {
+    #about-ecosystem .about-ecosystem__header {
+      gap: 1rem;
+      margin-bottom: 2.25rem;
+    }
+
+    #about-ecosystem .about-ecosystem__header-row {
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: clamp(2rem, 4vw, 4rem);
+      align-items: center;
+    }
+  }
+
+  #about-ecosystem .about-ecosystem__intro {
+    margin: 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #6b7280;
+  }
+
+  @media (min-width: 640px) {
+    #about-ecosystem .about-ecosystem__intro {
+      font-size: 1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    #about-ecosystem .about-ecosystem__intro {
+      font-size: 1.0625rem;
+      align-self: center;
+    }
+  }
+
+  #about-ecosystem .about-ecosystem__cards {
+    display: grid;
+    gap: 0.875rem;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 1024px) {
+    #about-ecosystem .about-ecosystem__cards {
+      gap: 1rem;
+      margin-bottom: 0;
+    }
+  }
+
+  #about-ecosystem .about-ecosystem__item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem 1.125rem;
+    width: 100%;
+    padding: 1.125rem 1.25rem;
+    border: 1px solid #f3f4f6;
+    border-radius: 1rem;
+    background: #ffffff;
+    text-align: left;
+    cursor: pointer;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+  }
+
+  @media (min-width: 768px) {
+    #about-ecosystem .about-ecosystem__item {
+      grid-template-columns: auto minmax(0, 0.85fr) minmax(0, 1.15fr);
+      align-items: center;
+      gap: 1rem 1.375rem;
+      padding: 1.25rem 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    #about-ecosystem .about-ecosystem__item {
+      gap: 1.125rem 1.5rem;
+      padding: 1.375rem 1.625rem;
+    }
+  }
+
+  #about-ecosystem .about-ecosystem__item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.06);
+    border-color: #e0e7ff;
+  }
+
+  #about-ecosystem .about-ecosystem__item.is-active {
+    border-color: transparent;
+    background: var(--ecosystem-gradient-soft);
+    box-shadow: 0 0 0 1.5px transparent, 0 8px 24px -8px rgba(139, 92, 246, 0.25);
+    position: relative;
+  }
+
+  #about-ecosystem .about-ecosystem__item.is-active::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 1rem;
+    padding: 1.5px;
+    background: var(--ecosystem-gradient);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  #about-ecosystem .about-ecosystem__icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.25rem;
+    height: 5.25rem;
+    background: transparent;
+  }
+
+  @media (min-width: 768px) {
+    #about-ecosystem .about-ecosystem__icon {
+      width: 6rem;
+      height: 6rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    #about-ecosystem .about-ecosystem__icon {
+      width: 6.75rem;
+      height: 6.75rem;
+    }
+  }
+
+  #about-ecosystem .about-ecosystem__icon img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    background: transparent;
+  }
+
+  #about-ecosystem .about-ecosystem__item-meta {
+    display: grid;
+    gap: 0.2rem;
+    min-width: 0;
+  }
+
+  #about-ecosystem .about-ecosystem__item-label {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #9ca3af;
+  }
+
+  #about-ecosystem .about-ecosystem__item-title {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #3c3c3c;
+  }
+
+  @media (min-width: 1024px) {
+    #about-ecosystem .about-ecosystem__item-title {
+      font-size: 1.125rem;
+    }
+  }
+
+  #about-ecosystem .about-ecosystem__item-text {
+    margin: 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: #6b7280;
+    grid-column: 2;
+  }
+
+  @media (min-width: 768px) {
+    #about-ecosystem .about-ecosystem__item-text {
+      grid-column: auto;
+      font-size: 0.9375rem;
+      line-height: 1.58;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    #about-ecosystem .about-ecosystem__item-text {
+      font-size: 1rem;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-height: 820px) {
+    #about-ecosystem .container {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+
+    #about-ecosystem .about-ecosystem__icon {
+      width: 5rem;
+      height: 5rem;
+    }
+
+    #about-ecosystem .about-ecosystem__cards {
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    #about-ecosystem .about-ecosystem__item {
+      padding: 1.125rem 1.375rem;
+    }
+  }
+
+  #about-why-now .about-why-now__grid {
+    display: grid;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  @media (min-width: 1024px) {
+    #about-why-now .about-why-now__grid {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: clamp(2.5rem, 5vw, 4.5rem);
+      align-items: stretch;
+    }
+  }
+
+  #about-why-now .about-why-now__intro {
+    margin: 0;
+  }
+
+  @media (min-width: 1024px) {
+    #about-why-now .about-why-now__intro {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    #about-why-now .about-why-now__intro .section-subtitle {
+      margin-top: auto;
+      padding-top: 2rem;
+    }
+  }
+
+  #about-why-now .about-why-now__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  @media (min-width: 640px) {
+    #about-why-now .about-why-now__list {
+      gap: 1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    #about-why-now .about-why-now__list {
+      flex: 1;
+      min-height: 100%;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+  }
+
+  #about-why-now .about-why-now__card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.125rem 1.25rem;
+    background: #f9fafb;
+    border: 1px solid #f3f4f6;
+    border-radius: 1.25rem;
+    transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  }
+
+  @media (min-width: 1024px) {
+    #about-why-now .about-why-now__card {
+      flex: 1;
+      align-items: center;
+      gap: 1.125rem;
+      padding: clamp(1rem, 1.8vh, 1.5rem) clamp(1.125rem, 2vw, 1.5rem);
+    }
+  }
+
+  #about-why-now .about-why-now__card:hover {
+    background: #ffffff;
+    border-color: #e5e7eb;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.06), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+    transform: translateY(-1px);
+  }
+
+  #about-why-now .about-why-now__card-icon-wrap {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.75rem;
+    height: 3.75rem;
+    background: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.06);
+  }
+
+  @media (min-width: 1024px) {
+    #about-why-now .about-why-now__card-icon-wrap {
+      width: 4.25rem;
+      height: 4.25rem;
+      border-radius: 1.125rem;
+    }
+  }
+
+  #about-why-now .about-why-now__card-icon-wrap img {
+    width: 2.75rem;
+    height: 2.75rem;
+    display: block;
+    object-fit: contain;
+    background: transparent;
+  }
+
+  @media (min-width: 1024px) {
+    #about-why-now .about-why-now__card-icon-wrap img {
+      width: 3.125rem;
+      height: 3.125rem;
+    }
+  }
+
+  #about-why-now .about-why-now__card-body {
+    min-width: 0;
+    flex: 1;
+  }
+
+  #about-why-now .about-why-now__card-title {
+    margin: 0 0 0.375rem;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #1f2937;
+  }
+
+  @media (min-width: 1024px) {
+    #about-why-now .about-why-now__card-title {
+      font-size: 1.125rem;
+      margin-bottom: 0.4375rem;
+    }
+  }
+
+  #about-why-now .about-why-now__card-text {
+    margin: 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #6b7280;
+  }
+
+  @media (min-width: 1024px) {
+    #about-why-now .about-why-now__card-text {
+      font-size: 0.96875rem;
+      line-height: 1.65;
+    }
+  }
+
+  #about-journey .about-journey__grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    #about-journey .about-journey__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(1rem, 2vw, 1.5rem);
+    }
+  }
+
+  #about-journey .about-journey__card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.75rem 1.5rem 1.75rem;
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.03);
+  }
+
+  @media (min-width: 1024px) {
+    #about-journey .about-journey__card {
+      padding: 2rem 1.75rem 2rem;
+    }
+  }
+
+  #about-journey .about-journey__icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 9999px;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 1024px) {
+    #about-journey .about-journey__icon-wrap {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
+  #about-journey .about-journey__icon-wrap--orange {
+    background: #fff0e6;
+  }
+
+  #about-journey .about-journey__icon-wrap--purple {
+    background: #f3ecff;
+  }
+
+  #about-journey .about-journey__icon-wrap--blue {
+    background: #e8f2ff;
+  }
+
+  #about-journey .about-journey__icon-wrap img {
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    object-fit: contain;
+    background: transparent;
+  }
+
+  #about-journey .about-journey__icon-wrap--blue img,
+  #about-journey .about-journey__icon-wrap--blue svg {
+    width: 3.35rem;
+    height: 3.35rem;
+    display: block;
+    flex-shrink: 0;
+    background: transparent;
+  }
+
+  @media (min-width: 1024px) {
+    #about-journey .about-journey__icon-wrap img {
+      width: 2.125rem;
+      height: 2.125rem;
+    }
+
+    #about-journey .about-journey__icon-wrap--blue img,
+    #about-journey .about-journey__icon-wrap--blue svg {
+      width: 3.6rem;
+      height: 3.6rem;
+    }
+  }
+
+  #about-journey .about-journey__year {
+    margin: 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #3c3c3c;
+  }
+
+  @media (min-width: 1024px) {
+    #about-journey .about-journey__year {
+      font-size: 1.625rem;
+    }
+  }
+
+  #about-journey .about-journey__year--gradient {
+    background: linear-gradient(90deg, #c026d3 0%, #a21caf 18%, #9333ea 42%, #6366f1 68%, #2563eb 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  #about-journey .about-journey__divider {
+    width: 100%;
+    height: 1px;
+    background: #f0f0f0;
+    margin: -0.25rem 0 0;
+  }
+
+  #about-journey .about-journey__timeline {
+    position: relative;
+    padding-left: 1.375rem;
+  }
+
+  #about-journey .about-journey__timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.3125rem;
+    top: 0.55em;
+    bottom: 0.55em;
+    width: 0;
+    border-left: 1.5px dashed #e5e7eb;
+  }
+
+  #about-journey .about-journey__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.875rem;
+  }
+
+  #about-journey .about-journey__list li {
+    position: relative;
+    padding-left: 0.875rem;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: #6b7280;
+  }
+
+  @media (min-width: 1024px) {
+    #about-journey .about-journey__list li {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+  }
+
+  #about-journey .about-journey__list li::before {
+    content: "";
+    position: absolute;
+    left: -1.375rem;
+    top: 0.6em;
+    width: 0.4375rem;
+    height: 0.4375rem;
+    border-radius: 9999px;
+    transform: translateX(-50%);
+    margin-left: 0.3125rem;
+  }
+
+  #about-journey .about-journey__card--2025 .about-journey__list li::before {
+    background: #f97316;
+  }
+
+  #about-journey .about-journey__card--2026 .about-journey__list li::before {
+    background: #8b5cf6;
+  }
+
+  #about-journey .about-journey__card--future .about-journey__list li::before {
+    background: #3b82f6;
+  }
+
+  #about-leadership .about-leadership__header {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    #about-leadership .about-leadership__header {
+      margin-bottom: 3rem;
+    }
+  }
+
+  #about-leadership .about-leadership__header-row {
+    display: grid;
+    gap: 1.25rem;
+    align-items: start;
+  }
+
+  @media (min-width: 1024px) {
+    #about-leadership .about-leadership__header-row {
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: clamp(2rem, 4vw, 4rem);
+      align-items: center;
+    }
+  }
+
+  #about-leadership .about-leadership__intro {
+    margin: 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #6b7280;
+  }
+
+  @media (min-width: 640px) {
+    #about-leadership .about-leadership__intro {
+      font-size: 1.0625rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    #about-leadership .about-leadership__intro {
+      font-size: 1.125rem;
+    }
+  }
+
+  #about-leadership .about-leadership__card-wrap {
+    width: 100%;
+  }
+
+  #about-leadership .about-leadership__card {
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    border: 1px solid #f3f4f6;
+    border-radius: 1rem;
+    background: #ffffff;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.06);
+  }
+
+  @media (min-width: 768px) {
+    #about-leadership .about-leadership__card {
+      grid-template-columns: minmax(0, 0.4fr) minmax(0, 0.6fr);
+      align-items: stretch;
+      border-radius: 1.25rem;
+    }
+  }
+
+  #about-leadership .about-leadership__media {
+    position: relative;
+    overflow: hidden;
+    min-height: 20rem;
+    background: #ffffff;
+  }
+
+  @media (min-width: 768px) {
+    #about-leadership .about-leadership__media {
+      align-self: stretch;
+      min-height: 100%;
+    }
+  }
+
+  #about-leadership .about-leadership__portrait {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 20rem;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  @media (min-width: 768px) {
+    #about-leadership .about-leadership__portrait {
+      position: absolute;
+      inset: 0;
+      min-height: 0;
+      border-radius: 1.25rem 0 0 1.25rem;
+    }
+  }
+
+  #about-leadership .about-leadership__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  @media (min-width: 1024px) {
+    #about-leadership .about-leadership__body {
+      padding: clamp(2rem, 3.5vw, 3rem);
+    }
+  }
+
+  #about-leadership .about-leadership__name {
+    margin: 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #3c3c3c;
+  }
+
+  #about-leadership .about-leadership__role {
+    margin: 0.75rem 0 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--hero-accent);
+  }
+
+  @media (min-width: 1024px) {
+    #about-leadership .about-leadership__role {
+      font-size: 1.0625rem;
+    }
+  }
+
+  #about-leadership .about-leadership__divider {
+    width: 3rem;
+    height: 1px;
+    margin: 1.25rem 0 0;
+    border: 0;
+    background: #e5e7eb;
+  }
+
+  #about-leadership .about-leadership__bio {
+    margin: 1.25rem 0 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.75;
+    color: #6b7280;
+  }
+
+  @media (min-width: 1024px) {
+    #about-leadership .about-leadership__bio {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+  }
+
+  #about-leadership .about-leadership__actions {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1.75rem;
+  }
+
+  #about-leadership .about-leadership__bio-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.875rem 1.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    background: #ffffff;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #3c3c3c;
+    text-decoration: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  @media (min-width: 1024px) {
+    #about-leadership .about-leadership__bio-btn {
+      padding: 1rem 1.75rem;
+      font-size: 1.0625rem;
+    }
+  }
+
+  #about-leadership .about-leadership__bio-btn:hover {
+    border-color: #d1d5db;
+    background: #f9fafb;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.04);
+  }
+
+  #about-leadership .about-leadership__bio-btn svg {
+    flex-shrink: 0;
+    width: 1.125rem;
+    height: 1.125rem;
+    color: #6b7280;
+  }
+
+  @media (min-width: 1024px) {
+    #about-leadership .about-leadership__bio-btn svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+
+  #about-leadership .about-leadership__linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+    margin-left: calc(1.5rem + 1px);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: #0a66c2;
+    text-decoration: none;
+    transition: color 0.2s ease, opacity 0.2s ease;
+  }
+
+  @media (min-width: 1024px) {
+    #about-leadership .about-leadership__linkedin {
+      margin-top: 2rem;
+      margin-left: calc(1.75rem + 1px);
+      font-size: 1.375rem;
+    }
+  }
+
+  #about-leadership .about-leadership__linkedin:hover {
+    color: #004182;
+    opacity: 0.92;
+  }
+
+  #about-leadership .about-leadership__linkedin svg {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    #about-leadership .about-leadership__linkedin svg {
+      width: 2.25rem;
+      height: 2.25rem;
+    }
+  }
+
+  #about-governance .about-governance__panel {
+    margin-top: 2.5rem;
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    border: 1px solid #f3f4f6;
+    border-radius: 1rem;
+    background: #f9fafb;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  }
+
+  @media (min-width: 1024px) {
+    #about-governance .about-governance__panel {
+      margin-top: 3rem;
+      padding: 2.5rem;
+    }
+  }
+
+  #about-governance .about-governance__status {
+    margin: 0 0 1.5rem;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #6b7280;
+  }
+
+  #about-governance .about-governance__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  #about-governance .about-governance__tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.625rem 1rem;
+    border: 1px solid #f3f4f6;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1.35;
+    color: #6b7280;
+  }
+
+  #about-how-we-govern {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+  }
+
+  #about-how-we-govern > .container {
+    width: 100%;
+    padding-top: clamp(3rem, 6vh, 5rem);
+    padding-bottom: clamp(3rem, 6vh, 5rem);
+  }
+
+  #about-how-we-govern .about-section-header {
+    margin-bottom: clamp(2.5rem, 5vh, 3.5rem);
+  }
+
+  #about-how-we-govern .about-how-we-govern__grid {
+    display: grid;
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 640px) {
+    #about-how-we-govern .about-how-we-govern__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+    }
+  }
+
+  #about-how-we-govern .about-how-we-govern__item {
+    display: flex;
+    flex-direction: column;
+    min-height: clamp(220px, 28vh, 320px);
+    padding: clamp(1.75rem, 3vw, 2.75rem);
+    border: 1px solid #e5e7eb;
+    border-radius: 1.25rem;
+    background: #ffffff;
+    box-shadow:
+      0 1px 3px 0 rgb(0 0 0 / 0.04),
+      0 4px 16px -2px rgb(0 0 0 / 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  #about-how-we-govern .about-how-we-govern__item:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      0 20px 40px -8px rgb(0 0 0 / 0.12),
+      0 8px 16px -6px rgb(249 115 22 / 0.08);
+    border-color: #fed7aa;
+  }
+
+  #about-how-we-govern .about-how-we-govern__item-icon {
+    display: block;
+    width: clamp(56px, 7vw, 72px);
+    height: clamp(56px, 7vw, 72px);
+    margin-bottom: clamp(1.25rem, 2.5vh, 1.75rem);
+    object-fit: contain;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  #about-how-we-govern .about-how-we-govern__item-title {
+    margin: 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: #111827;
+  }
+
+  #about-how-we-govern .about-how-we-govern__item-text {
+    margin: clamp(0.875rem, 1.5vh, 1.125rem) 0 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+    line-height: 1.65;
+    color: #6b7280;
+    flex: 1;
+  }
+
+  #about-our-ecosystem {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+  }
+
+  #about-our-ecosystem > .container {
+    width: 100%;
+    padding-top: clamp(3rem, 6vh, 5rem);
+    padding-bottom: clamp(3rem, 6vh, 5rem);
+  }
+
+  #about-our-ecosystem .about-section-header {
+    margin-bottom: clamp(3rem, 8vh, 5.5rem);
+    text-align: center;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #about-our-ecosystem .about-our-ecosystem__logos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: clamp(2.75rem, 6vh, 4rem);
+    column-gap: clamp(1.5rem, 4vw, 2.5rem);
+    justify-items: center;
+    align-items: center;
+    max-width: 54rem;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+  }
+
+  @media (min-width: 640px) {
+    #about-our-ecosystem .about-our-ecosystem__logos {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      row-gap: clamp(3.5rem, 8vh, 5.5rem);
+      column-gap: clamp(2.5rem, 5vw, 4rem);
+      max-width: 68rem;
+    }
+  }
+
+  #about-our-ecosystem .about-our-ecosystem__logos li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: clamp(4.5rem, 10vh, 6.5rem);
+  }
+
+  #about-our-ecosystem .about-our-ecosystem__logos img {
+    display: block;
+    width: auto;
+    height: 3.25rem;
+    max-width: 11.5rem;
+    object-fit: contain;
+    opacity: 1;
+    filter: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  @media (min-width: 640px) {
+    #about-our-ecosystem .about-our-ecosystem__logos img {
+      height: 4rem;
+      max-width: 14rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    #about-our-ecosystem .about-our-ecosystem__logos img {
+      height: 4.5rem;
+      max-width: 15.5rem;
+    }
+  }
+
+  #about-our-ecosystem .about-our-ecosystem__logos li:hover img {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+
+  #about-cta {
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+    text-align: center;
+  }
+
+  #about-cta .about-cta__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+
+  #about-cta .section-subtitle {
+    margin-top: 1.25rem;
+  }
+
+  #about-cta .about-body-text {
+    margin-top: 0.5rem;
+  }
+
+  #about-cta .about-cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    #about-cta .about-cta__actions { margin-top: 1.5rem; }
+  }
+
+  @media (max-width: 639px) {
+    #about-cta .about-cta__actions a {
+      width: 100%;
+      max-width: 20rem;
+      justify-content: center;
+    }
+  }
+
+  #about-cta .about-cta__btn--gradient {
+    border: none;
+    color: #ffffff;
+    background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #3b82f6 100%);
+    box-shadow: 0 4px 14px rgba(139, 92, 246, 0.28);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  }
+
+  #about-cta .about-cta__btn--gradient:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #db2777 0%, #7c3aed 50%, #2563eb 100%);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.38);
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+  }
+</style>
+
+<!-- HERO — same structure & classes as home.html -->
+<section class="relative flex items-center overflow-hidden" id="about-hero" aria-labelledby="about-hero-heading">
+  <div class="hero-media absolute inset-0 z-0">
+    <div class="hero-video-stack" aria-hidden="true">
+      <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        webkit-playsinline
+        preload="auto"
+        disablepictureinpicture
+        disableremoteplayback
+        poster="/assets/videos/home-cover/atomo-home-cover-poster.webp"
+      >
+        <source src="/assets/videos/home-cover/atomo-home-cover.webm" type="video/webm">
+        <source src="/assets/videos/home-cover/atomo-home-cover.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-media__overlay hero-media__overlay--veil absolute inset-0"></div>
+    <div class="hero-media__overlay hero-media__overlay--content absolute inset-0"></div>
+    <div class="hero-media__overlay hero-media__overlay--depth absolute inset-0"></div>
+    <div class="hero-video-vignette" aria-hidden="true"></div>
+  </div>
+
+  <div class="hero-inner relative z-10 container mx-auto px-6 lg:px-12 max-w-7xl h-full flex flex-col justify-center items-start">
+    <div class="hero-content">
+      <div class="hero-copy-head">
+        <p class="hero-eyebrow">About Atomo</p>
+        <h1 id="about-hero-heading" class="hero-headline">
+          <span class="hero-headline__line">We Are Building The Computing</span>
+          <span class="hero-headline__line hero-headline__accent">Layer For Physical AI</span>
+        </h1>
+      </div>
+
+      <p class="hero-subtitle">
+        Atomo Innovation is creating a new class of edge-AI computing systems that bring intelligence directly to machines, infrastructure, cameras, sensors, and devices&mdash;without depending on continuous cloud connectivity.
+      </p>
+
+      <p class="about-hero__tagline">Built in India. Engineered for the world.</p>
+
+      <div class="hero-cta flex flex-wrap gap-4">
+        <a href="/platform"
+           class="inline-flex items-center px-8 py-4 bg-white text-gray-900 font-semibold rounded-2xl hover:bg-gray-100 transition-all duration-300 text-lg">
+          Explore Our Technology
+        </a>
+        <a href="/company/leadership"
+           class="inline-flex items-center px-8 py-4 border border-white/70 text-white font-semibold rounded-2xl hover:bg-white/10 transition-all duration-300 text-lg">
+          Meet Our Leadership
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white border-t border-gray-100" id="about-company" aria-labelledby="about-company-heading">
+  <div class="about-company__inner">
+    <div class="container mx-auto px-6 lg:px-12 max-w-7xl">
+      <div class="about-company__grid">
+      <header class="about-company__header">
+        <span class="section-2-eyebrow">About the Company</span>
+        <h2 id="about-company-heading" class="section-2-title" style="max-width: 52rem;">
+          Artificial intelligence is moving beyond the cloud.<br>We are building the infrastructure that takes it there.
+        </h2>
+      </header>
+
+      <div class="about-company__diagram-wrap">
+        <figure class="about-company__diagram" aria-label="Edge-AI computing architecture diagram">
+          <div class="about-company__diagram-frame">
+            <div class="about-company__diagram-svg-wrap">
+            <svg viewBox="-40 -40 1040 560" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="about-company-diagram-title">
+              <title id="about-company-diagram-title">Edge-AI computing architecture — data to intelligence, locally</title>
+              <defs>
+                <linearGradient id="g-ink" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#2563eb" stop-opacity="0.95"/>
+                  <stop offset="45%" stop-color="#5b6cff" stop-opacity="0.95"/>
+                  <stop offset="78%" stop-color="#a855f7" stop-opacity="0.95"/>
+                  <stop offset="100%" stop-color="#ec4899" stop-opacity="0.95"/>
+                </linearGradient>
+                <linearGradient id="g-connector" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#2563eb" stop-opacity="0.55"/>
+                  <stop offset="55%" stop-color="#7c3aed" stop-opacity="0.45"/>
+                  <stop offset="100%" stop-color="#ec4899" stop-opacity="0.35"/>
+                </linearGradient>
+                <linearGradient id="g-apu" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#fff7ed"/>
+                  <stop offset="55%" stop-color="#ffffff"/>
+                  <stop offset="100%" stop-color="#f8fafc"/>
+                </linearGradient>
+                <filter id="f-soft" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#0f172a" flood-opacity="0.10"/>
+                  <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.06"/>
+                </filter>
+                <filter id="f-glow" x="-40%" y="-40%" width="180%" height="180%">
+                  <feGaussianBlur stdDeviation="4" result="blur"/>
+                  <feColorMatrix in="blur" type="matrix"
+                    values="1 0 0 0 0
+                            0 1 0 0 0
+                            0 0 1 0 0
+                            0 0 0 0.55 0" result="soft"/>
+                  <feMerge>
+                    <feMergeNode in="soft"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <!-- subtle grid background -->
+              <g opacity="0.5">
+                <path d="M0 88 H960" stroke="#e5e7eb" stroke-width="1"/>
+                <path d="M0 176 H960" stroke="#eef2f7" stroke-width="1"/>
+                <path d="M0 264 H960" stroke="#eef2f7" stroke-width="1"/>
+                <path d="M0 352 H960" stroke="#eef2f7" stroke-width="1"/>
+                <path d="M0 440 H960" stroke="#eef2f7" stroke-width="1"/>
+              </g>
+
+              <text x="72" y="64" fill="#6b7280" font-size="18" font-weight="900" letter-spacing="2.4">INPUT</text>
+              <text x="888" y="64" fill="#6b7280" font-size="18" font-weight="900" letter-spacing="2.4" text-anchor="end">INTELLIGENCE</text>
+
+              <!-- left cards -->
+              <g filter="url(#f-soft)">
+                <rect x="56" y="158" width="220" height="84" rx="20" fill="#ffffff" stroke="#e5e7eb"/>
+                <rect x="56" y="270" width="220" height="84" rx="20" fill="#ffffff" stroke="#e5e7eb"/>
+                <rect x="56" y="382" width="220" height="84" rx="20" fill="#ffffff" stroke="#e5e7eb"/>
+              </g>
+              <text x="166" y="208" fill="#374151" font-size="19" font-weight="700" text-anchor="middle">Sensor</text>
+              <text x="166" y="320" fill="#374151" font-size="19" font-weight="700" text-anchor="middle">Camera</text>
+              <text x="166" y="432" fill="#374151" font-size="19" font-weight="700" text-anchor="middle">Machine</text>
+
+              <!-- right cards -->
+              <g filter="url(#f-soft)">
+                <rect x="684" y="158" width="220" height="84" rx="20" fill="#ffffff" stroke="#e5e7eb"/>
+                <rect x="684" y="270" width="220" height="84" rx="20" fill="#ffffff" stroke="#e5e7eb"/>
+                <rect x="684" y="382" width="220" height="84" rx="20" fill="#ffffff" stroke="#e5e7eb"/>
+              </g>
+              <text x="794" y="208" fill="#374151" font-size="19" font-weight="700" text-anchor="middle">Inference</text>
+              <text x="794" y="320" fill="#374151" font-size="19" font-weight="700" text-anchor="middle">Action</text>
+              <text x="794" y="432" fill="#374151" font-size="19" font-weight="700" text-anchor="middle">Insight</text>
+
+              <!-- center modules -->
+              <g filter="url(#f-soft)">
+                <rect x="322" y="232" width="316" height="140" rx="26" fill="url(#g-apu)" stroke="#f97316" stroke-width="3.2"/>
+                <rect x="368" y="396" width="224" height="78" rx="22" fill="#ffffff" stroke="#e5e7eb"/>
+              </g>
+
+              <text x="480" y="296" fill="#3c3c3c" font-size="30" font-weight="800" text-anchor="middle">APU</text>
+              <text x="480" y="330" fill="#6b7280" font-size="16" font-weight="800" text-anchor="middle" letter-spacing="1.45">COMPUTE</text>
+              <text x="480" y="444" fill="#374151" font-size="19" font-weight="800" text-anchor="middle">AtomicOS</text>
+
+              <!-- connectors -->
+              <g fill="none" stroke="url(#g-connector)" stroke-width="3.25" stroke-linecap="round" filter="url(#f-glow)">
+                <!-- left → APU -->
+                <path d="M276 200 H312 C332 200 328 304 322 304"/>
+                <path d="M276 312 H322"/>
+                <path d="M276 424 H312 C332 424 328 334 322 334"/>
+
+                <!-- APU → right -->
+                <path d="M638 304 H650 C666 304 670 200 684 200"/>
+                <path d="M638 312 H684"/>
+                <path d="M638 320 H650 C666 320 670 424 684 424"/>
+              </g>
+
+            </svg>
+            </div>
+
+            <ul class="about-company__diagram-points" aria-label="How the edge-AI architecture works">
+              <li>Capture video, sensor and operational data at the edge.</li>
+              <li>Process with the APU and AtomicOS locally for real-time decisions.</li>
+              <li>Transmit only meaningful events to power inference, action and insight.</li>
+            </ul>
+          </div>
+          <figcaption class="about-company__diagram-caption">
+            Edge-AI computing architecture &mdash; data to intelligence, locally.
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="about-company__copy">
+        <p class="about-body-text">
+          Atomo Innovation Pvt. Ltd. is an Indian deep-tech company developing integrated edge-AI computing platforms for industries, infrastructure, enterprises, and intelligent environments.
+        </p>
+        <p class="about-body-text">
+          Our platform combines purpose-built computing hardware, AtomicOS, local AI inference, multi-protocol connectivity, and application software into one unified ecosystem.
+        </p>
+        <p class="about-body-text">
+          By processing intelligence close to where data is created, Atomo helps organisations respond faster, protect sensitive information, reduce cloud dependence, and deploy AI in environments where reliability matters.
+        </p>
+        <p class="about-body-text">
+          We believe the next phase of computing will not exist only inside data centres. It will operate inside factories, cities, buildings, vehicles, healthcare systems, farms, and machines.
+        </p>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white border-t border-gray-100" id="about-section-3" aria-labelledby="about-vision-heading about-mission-heading">
+  <div class="container mx-auto px-6 lg:px-12 max-w-7xl">
+    <div class="about-vm">
+      <div class="about-vm__grid">
+        <article class="about-vm__card about-vm__card--vision" aria-labelledby="about-vision-heading">
+          <div class="about-vm__badge" aria-hidden="true">
+            <img src="/assets/about_page/vision-icon.svg" alt="" width="56" height="56" decoding="async">
+          </div>
+          <p class="about-vm__eyebrow">Our Vision</p>
+          <h2 id="about-vision-heading" class="about-vm__title">
+            To build one of the world&rsquo;s most important computing ecosystems for Physical AI&mdash;originating in India and serving the world.
+          </h2>
+          <div class="about-vm__rule" aria-hidden="true"></div>
+          <p class="about-vm__body">
+            We envision a future where intelligent machines and infrastructure can understand, decide, and act locally. Our ambition is to make secure, efficient, and accessible edge intelligence a foundational layer of the global computing industry.
+          </p>
+        </article>
+
+        <div class="about-vm__center" aria-hidden="true">
+          <div class="about-vm__center-line"></div>
+          <span class="about-vm__center-dot about-vm__center-dot--left"></span>
+          <span class="about-vm__center-dot about-vm__center-dot--right"></span>
+          <img
+            src="/assets/brand/atomo-logo.png"
+            alt=""
+            class="about-vm__atom-logo"
+            width="48"
+            height="48"
+            decoding="async"
+          >
+        </div>
+
+        <article class="about-vm__card about-vm__card--mission" aria-labelledby="about-mission-heading">
+          <div class="about-vm__badge" aria-hidden="true">
+            <img src="/assets/about_page/mission-icon.svg" alt="" width="56" height="56" decoding="async">
+          </div>
+          <p class="about-vm__eyebrow">Our Mission</p>
+          <h2 id="about-mission-heading" class="about-vm__title">
+            To make powerful AI computing available wherever the physical world creates data.
+          </h2>
+          <div class="about-vm__rule" aria-hidden="true"></div>
+          <p class="about-vm__body">
+            We integrate edge-AI hardware, operating systems, connectivity, developer tools, and real-world applications into a unified platform that enables organisations to deploy intelligence securely, efficiently, and at scale.
+          </p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white border-t border-gray-100" id="about-ecosystem" aria-labelledby="about-ecosystem-heading">
+  <div class="container mx-auto px-6 lg:px-12 max-w-7xl py-12">
+    <header class="about-ecosystem__header">
+      <span class="section-2-eyebrow">The Atomo Ecosystem</span>
+      <div class="about-ecosystem__header-row">
+        <h2 id="about-ecosystem-heading" class="section-2-title">
+          Hardware. Software. Intelligence. One integrated platform.
+        </h2>
+        <p class="about-ecosystem__intro">
+          From industrial-grade silicon to developer tools and cloud orchestration &mdash; the Atomo ecosystem connects every layer of edge intelligence into one unified platform built for the physical world.
+        </p>
+      </div>
+    </header>
+
+    <div class="about-ecosystem__cards" role="tablist" aria-label="Atomo platform layers">
+      <button type="button" class="about-ecosystem__item" role="tab" id="about-ecosystem-tab-0" aria-selected="false" data-ecosystem-index="0">
+        <span class="about-ecosystem__icon" aria-hidden="true">
+          <img src="/assets/icons/about-ecosystem/compute-chip.png" alt="" width="108" height="108" loading="lazy" decoding="async" />
+        </span>
+        <span class="about-ecosystem__item-meta">
+          <span class="about-ecosystem__item-label">Compute</span>
+          <span class="about-ecosystem__item-title">Atomo Processing Units</span>
+        </span>
+        <p class="about-ecosystem__item-text">Purpose-built processing units engineered for industrial, infrastructure, and distributed environments where AI must operate close to sensors, cameras, and machines.</p>
+      </button>
+
+      <button type="button" class="about-ecosystem__item is-active" role="tab" id="about-ecosystem-tab-1" aria-selected="true" data-ecosystem-index="1">
+        <span class="about-ecosystem__icon" aria-hidden="true">
+          <img src="/assets/icons/about-ecosystem/atomicos.png" alt="" width="108" height="108" loading="lazy" decoding="async" />
+        </span>
+        <span class="about-ecosystem__item-meta">
+          <span class="about-ecosystem__item-label">Operating System</span>
+          <span class="about-ecosystem__item-title">AtomicOS</span>
+        </span>
+        <p class="about-ecosystem__item-text">An optimised operating environment engineered to manage AI workloads, connectivity, security, devices, and real-time edge operations.</p>
+      </button>
+
+      <button type="button" class="about-ecosystem__item" role="tab" id="about-ecosystem-tab-2" aria-selected="false" data-ecosystem-index="2">
+        <span class="about-ecosystem__icon" aria-hidden="true">
+          <img src="/assets/icons/about-ecosystem/edge-ai.png" alt="" width="108" height="108" loading="lazy" decoding="async" />
+        </span>
+        <span class="about-ecosystem__item-meta">
+          <span class="about-ecosystem__item-label">Intelligence</span>
+          <span class="about-ecosystem__item-title">Edge-AI Software and SDKs</span>
+        </span>
+        <p class="about-ecosystem__item-text">Developer tools and runtime software for model deployment, NPU-accelerated inference, and local intelligence across Atomo edge hardware.</p>
+      </button>
+
+      <button type="button" class="about-ecosystem__item" role="tab" id="about-ecosystem-tab-3" aria-selected="false" data-ecosystem-index="3">
+        <span class="about-ecosystem__icon" aria-hidden="true">
+          <img src="/assets/icons/about-ecosystem/atomic-center.png" alt="" width="108" height="108" loading="lazy" decoding="async" />
+        </span>
+        <span class="about-ecosystem__item-meta">
+          <span class="about-ecosystem__item-label">Orchestration</span>
+          <span class="about-ecosystem__item-title">Atomic Center</span>
+        </span>
+        <p class="about-ecosystem__item-text">Centralised deployment, monitoring, and orchestration for distributed Atomo devices across fleets, sites, and installations.</p>
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var section = document.getElementById("about-ecosystem");
+    if (!section) return;
+
+    var tabs = section.querySelectorAll("[data-ecosystem-index]");
+
+    function setActiveLayer(index) {
+      tabs.forEach(function (tab) {
+        var isActive = Number(tab.dataset.ecosystemIndex) === index;
+        tab.classList.toggle("is-active", isActive);
+        tab.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+    }
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        setActiveLayer(Number(tab.dataset.ecosystemIndex));
+      });
+    });
+  })();
+</script>
+
+<section class="bg-white border-t border-gray-100" id="about-why-now" aria-labelledby="about-why-now-heading">
+  <div class="container mx-auto px-6 lg:px-12 max-w-7xl py-12">
+    <div class="about-why-now__grid">
+      <div class="about-why-now__intro">
+        <span class="section-2-eyebrow">Why Now</span>
+        <h2 id="about-why-now-heading" class="section-2-title">
+          The physical world generates intelligence faster than the cloud can respond.
+        </h2>
+        <p class="section-subtitle">Atomo brings intelligence closer to action.</p>
+      </div>
+
+      <ol class="about-why-now__list">
+        <li class="about-why-now__card">
+          <div class="about-why-now__card-icon-wrap" aria-hidden="true">
+            <img src="/assets/icons/about-why-now/latency.svg" alt="" width="50" height="50" loading="lazy" decoding="async" />
+          </div>
+          <div class="about-why-now__card-body">
+            <h3 class="about-why-now__card-title">Latency</h3>
+            <p class="about-why-now__card-text">
+              Real-world systems often need decisions in milliseconds, not after a cloud round trip.
+            </p>
+          </div>
+        </li>
+        <li class="about-why-now__card">
+          <div class="about-why-now__card-icon-wrap" aria-hidden="true">
+            <img src="/assets/icons/about-why-now/privacy.svg" alt="" width="50" height="50" loading="lazy" decoding="async" />
+          </div>
+          <div class="about-why-now__card-body">
+            <h3 class="about-why-now__card-title">Privacy</h3>
+            <p class="about-why-now__card-text">
+              Sensitive video, industrial, healthcare, and operational data should not always leave the location where it is created.
+            </p>
+          </div>
+        </li>
+        <li class="about-why-now__card">
+          <div class="about-why-now__card-icon-wrap" aria-hidden="true">
+            <img src="/assets/icons/about-why-now/reliability.svg" alt="" width="50" height="50" loading="lazy" decoding="async" />
+          </div>
+          <div class="about-why-now__card-body">
+            <h3 class="about-why-now__card-title">Reliability</h3>
+            <p class="about-why-now__card-text">
+              Factories, infrastructure, machines, and safety systems must continue operating even when internet connectivity is weak or unavailable.
+            </p>
+          </div>
+        </li>
+        <li class="about-why-now__card">
+          <div class="about-why-now__card-icon-wrap" aria-hidden="true">
+            <img src="/assets/icons/about-why-now/efficiency.svg" alt="" width="50" height="50" loading="lazy" decoding="async" />
+          </div>
+          <div class="about-why-now__card-body">
+            <h3 class="about-why-now__card-title">Efficiency</h3>
+            <p class="about-why-now__card-text">
+              Sending every frame, sensor event, or machine signal to the cloud creates unnecessary bandwidth, cost, and energy consumption.
+            </p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white border-t border-gray-100" id="about-journey" aria-labelledby="about-journey-heading">
+  <div class="container mx-auto px-6 lg:px-12 max-w-7xl py-12">
+    <header class="about-section-header">
+      <span class="section-2-eyebrow">Our Journey</span>
+      <h2 id="about-journey-heading" class="section-2-title">
+        From an idea in India to a global Physical AI platform.
+      </h2>
+      <p class="section-subtitle">
+        Our journey has been driven by innovation, collaboration, and a relentless focus on building the future of intelligent edge computing.
+      </p>
+    </header>
+
+    <div class="about-journey__grid">
+      <article class="about-journey__card about-journey__card--2025">
+        <div class="about-journey__icon-wrap about-journey__icon-wrap--orange" aria-hidden="true">
+          <img src="/assets/icons/about-journey/calendar.svg" alt="" width="34" height="34" loading="lazy" decoding="async">
+        </div>
+        <h3 class="about-journey__year">2025</h3>
+        <div class="about-journey__divider" aria-hidden="true"></div>
+        <div class="about-journey__timeline">
+          <ul class="about-journey__list">
+            <li>Atomo Innovation Pvt. Ltd. incorporated in India</li>
+            <li>Development of the Atomo Processing Unit and AtomicOS platform</li>
+            <li>Supported through leading Indian Innovation and Incubation ecosystems</li>
+            <li>Selected among the Top 10 AI startups at GITEX Dubai Supernova</li>
+            <li>Recognised among the Top 3 at the GESIA Pitchathon</li>
+            <li>Selected by Startup India to exhibit at COMEUP in South Korea</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="about-journey__card about-journey__card--2026">
+        <div class="about-journey__icon-wrap about-journey__icon-wrap--purple" aria-hidden="true">
+          <img src="/assets/icons/about-journey/globe.svg" alt="" width="34" height="34" loading="lazy" decoding="async">
+        </div>
+        <h3 class="about-journey__year">2026</h3>
+        <div class="about-journey__divider" aria-hidden="true"></div>
+        <div class="about-journey__timeline">
+          <ul class="about-journey__list">
+            <li>Selected to exhibit at TechBeat Shizuoka, Japan</li>
+            <li>Expanded international engagement across Asia, the Middle East, and Africa</li>
+            <li>Continued development of Atomo&rsquo;s Integrated Physical AI computing ecosystem</li>
+            <li>Demonstrated industrial edge-computing and multi-model AI capabilities</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="about-journey__card about-journey__card--future">
+        <div class="about-journey__icon-wrap about-journey__icon-wrap--blue" aria-hidden="true">
+          <img src="/assets/icons/about-journey/next-chapter.png" alt="" width="58" height="58" loading="lazy" decoding="async">
+        </div>
+        <h3 class="about-journey__year about-journey__year--gradient">The Next Chapter</h3>
+        <div class="about-journey__divider" aria-hidden="true"></div>
+        <div class="about-journey__timeline">
+          <ul class="about-journey__list">
+            <li>Scaling Atomo&rsquo;s computing ecosystem across industries, geographies, developers, and intelligent infrastructure.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white border-t border-gray-100" id="about-leadership" aria-labelledby="about-leadership-heading">
+  <div class="container mx-auto px-6 lg:px-12 max-w-7xl py-12">
+    <header class="about-leadership__header">
+      <span class="section-2-eyebrow">Executive Leadership</span>
+      <div class="about-leadership__header-row">
+        <h2 id="about-leadership-heading" class="section-2-title">
+          Built by people committed to making intelligence physical.
+        </h2>
+        <p class="about-leadership__intro">
+          Atomo is led by visionaries and builders who believe in the power of edge intelligence to transform industries and improve lives.
+        </p>
+      </div>
+    </header>
+
+    <div class="about-leadership__card-wrap">
+      <article class="about-leadership__card">
+        <div class="about-leadership__media">
+          <img
+            src="/content/company/PratikParmar.png"
+            alt="Portrait of Pratik Parmar"
+            class="about-leadership__portrait"
+            width="480"
+            height="600"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+        <div class="about-leadership__body">
+          <h3 class="about-leadership__name">Pratik Parmar</h3>
+          <p class="about-leadership__role">Founder &amp; Chief Executive Officer</p>
+          <hr class="about-leadership__divider" aria-hidden="true">
+          <p class="about-leadership__bio">
+            Pratik Parmar is a deep-tech entrepreneur focused on edge computing, AI hardware, and intelligent infrastructure. He leads Atomo&rsquo;s vision to build a globally relevant Physical AI computing ecosystem from India. His efforts have positioned India as a serious contributor to next-generation intelligence platforms&mdash;built for the real world.
+          </p>
+          <div class="about-leadership__actions">
+            <a href="/company/founder-vision" class="about-leadership__bio-btn">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 21a8 8 0 0 0-16 0" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Read biography
+            </a>
+            <a
+              href="https://www.linkedin.com/in/pratik-parmar-smart/"
+              class="about-leadership__linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path fill="#0A66C2" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white border-t border-gray-100" id="about-governance" aria-labelledby="about-governance-heading">
+  <div class="container mx-auto px-6 lg:px-12 max-w-7xl py-12">
+    <header class="about-section-header">
+      <span class="section-2-eyebrow">Board and Governance</span>
+      <h2 id="about-governance-heading" class="section-2-title">
+        Independent perspective. Responsible leadership. Long-term thinking.
+      </h2>
+      <p class="section-subtitle">
+        Atomo&rsquo;s governance structure is designed to support disciplined decision-making, responsible innovation, strategic accountability, and sustainable long-term growth.
+      </p>
+    </header>
+
+    <div class="about-governance__panel">
+      <p class="about-governance__status">Board and advisory profiles will be published following formal approval.</p>
+      <ul class="about-governance__tags">
+        <li class="about-governance__tag">Semiconductor and AI Hardware</li>
+        <li class="about-governance__tag">Global Strategy</li>
+        <li class="about-governance__tag">Commercial Growth</li>
+        <li class="about-governance__tag">Investment and Fundraising</li>
+        <li class="about-governance__tag">International Expansion</li>
+        <li class="about-governance__tag">Technology and Product</li>
+        <li class="about-governance__tag">Industrial Deployment</li>
+        <li class="about-governance__tag">Corporate Governance</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white border-t border-gray-100" id="about-how-we-govern" aria-labelledby="about-how-we-govern-heading">
+  <div class="container mx-auto px-6 lg:px-12 max-w-7xl">
+    <header class="about-section-header">
+      <span class="section-2-eyebrow">How We Govern</span>
+      <h2 id="about-how-we-govern-heading" class="section-2-title">
+        Innovation must move fast. Governance must keep it responsible.
+      </h2>
+    </header>
+
+    <div class="about-how-we-govern__grid">
+      <article class="about-how-we-govern__item">
+        <img
+          class="about-how-we-govern__item-icon"
+          src="/assets/about_page/govern/accountability.png?v=2"
+          alt=""
+          width="72"
+          height="72"
+          loading="lazy"
+          decoding="async"
+        >
+        <h3 class="about-how-we-govern__item-title">Accountability</h3>
+        <p class="about-how-we-govern__item-text">
+          Clear ownership, measurable objectives, and transparent decision-making guide the company&rsquo;s execution.
+        </p>
+      </article>
+      <article class="about-how-we-govern__item">
+        <img
+          class="about-how-we-govern__item-icon"
+          src="/assets/about_page/govern/responsible-innovation.png?v=2"
+          alt=""
+          width="72"
+          height="72"
+          loading="lazy"
+          decoding="async"
+        >
+        <h3 class="about-how-we-govern__item-title">Responsible Innovation</h3>
+        <p class="about-how-we-govern__item-text">
+          We design technology with attention to security, privacy, reliability, safety, and real-world consequences.
+        </p>
+      </article>
+      <article class="about-how-we-govern__item">
+        <img
+          class="about-how-we-govern__item-icon"
+          src="/assets/about_page/govern/independence.png?v=2"
+          alt=""
+          width="72"
+          height="72"
+          loading="lazy"
+          decoding="async"
+        >
+        <h3 class="about-how-we-govern__item-title">Independence of Thought</h3>
+        <p class="about-how-we-govern__item-text">
+          We value direct, evidence-based advice and constructive challenge from leaders with diverse experience.
+        </p>
+      </article>
+      <article class="about-how-we-govern__item">
+        <img
+          class="about-how-we-govern__item-icon"
+          src="/assets/about_page/govern/long-term-value.png?v=2"
+          alt=""
+          width="72"
+          height="72"
+          loading="lazy"
+          decoding="async"
+        >
+        <h3 class="about-how-we-govern__item-title">Long-Term Value</h3>
+        <p class="about-how-we-govern__item-text">
+          We prioritise sustainable technology, defensible intellectual property, strong partnerships, and enduring stakeholder value.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white border-t border-gray-100" id="about-our-ecosystem" aria-labelledby="about-our-ecosystem-heading">
+  <div class="container mx-auto px-6 lg:px-12 max-w-7xl">
+    <header class="about-section-header">
+      <span class="section-2-eyebrow">Our Ecosystem</span>
+      <h2 id="about-our-ecosystem-heading" class="section-2-title">
+        Supported by institutions that believe deep technology can be built from India.
+      </h2>
+    </header>
+
+    <ul class="about-our-ecosystem__logos">
+      <li>
+        <img src="/assets/about_page/pdeuiic.png" alt="PDEU IIC Innovation and Incubation Centre" width="160" height="48" loading="lazy" decoding="async" />
+      </li>
+      <li>
+        <img src="/assets/about_page/nasscomt.svg" alt="NASSCOM" width="160" height="48" loading="lazy" decoding="async" />
+      </li>
+      <li>
+        <img src="/assets/about_page/ihubs.svg" alt="iHub" width="160" height="48" loading="lazy" decoding="async" />
+      </li>
+      <li>
+        <img src="/assets/about_page/gtu_ventures.svg" alt="GTU Ventures" width="160" height="48" loading="lazy" decoding="async" />
+      </li>
+      <li>
+        <img src="/assets/about_page/nidhiprayas.png" alt="NIDHI PRAYAS" width="160" height="48" loading="lazy" decoding="async" />
+      </li>
+      <li>
+        <img src="/assets/about_page/VCUf.svg" alt="VCU" width="160" height="48" loading="lazy" decoding="async" />
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="bg-white border-t border-gray-100" id="about-cta" aria-labelledby="about-cta-heading">
+  <div class="container mx-auto px-6 lg:px-12 max-w-7xl py-12 about-cta__inner">
+    <h2 id="about-cta-heading" class="section-2-title">The future of AI will not live only in the cloud.</h2>
+    <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">It will operate wherever the physical world needs to think.</p>
+    <p class="about-body-text">Atomo is building that future.</p>
+
+    <div class="about-cta__actions">
+      <a href="/contact?interest=partnership"
+         class="inline-flex items-center px-8 py-4 bg-white text-gray-900 font-semibold rounded-2xl border border-gray-300 shadow-sm hover:bg-gray-50 transition-all duration-300 text-lg">
+        Partner With Atomo
+      </a>
+      <a href="/company/careers"
+         class="about-cta__btn--gradient inline-flex items-center px-8 py-4 font-semibold rounded-2xl text-lg">
+        Join Our Team
+      </a>
+    </div>
+  </div>
+</section>

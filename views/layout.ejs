@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="<%= meta.language || 'en' %>">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= meta.title %></title>
+  <meta name="description" content="<%= meta.description %>" />
+  <meta name="robots" content="<%= meta.robots %>" />
+  <meta name="author" content="<%= site.legalName %>" />
+  <meta name="keywords" content="<%= Array.isArray(meta.keywords) ? meta.keywords.join(', ') : meta.keywords %>" />
+  <meta name="application-name" content="<%= site.name %>" />
+  <meta name="theme-color" content="<%= site.themeColor %>" />
+  <meta name="geo.region" content="IN-GJ" />
+  <meta name="geo.placename" content="Gandhinagar" />
+  <link rel="canonical" href="<%= meta.url %>" />
+  <link rel="alternate" hreflang="<%= meta.language || 'en' %>" href="<%= meta.url %>" />
+  <link rel="alternate" type="application/rss+xml" title="<%= site.name %>" href="<%= site.url %>/rss.xml" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta property="og:type" content="<%= meta.ogType %>" />
+  <meta property="og:locale" content="<%= meta.locale || site.locale %>" />
+  <meta property="og:title" content="<%= meta.title %>" />
+  <meta property="og:description" content="<%= meta.description %>" />
+  <meta property="og:url" content="<%= meta.url %>" />
+  <meta property="og:site_name" content="<%= site.name %>" />
+  <meta property="og:image" content="<%= meta.ogImage %>" />
+  <meta property="og:image:alt" content="<%= meta.ogImageAlt || meta.title %>" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="<%= meta.twitterSite || site.twitterHandle %>" />
+  <meta name="twitter:creator" content="<%= meta.twitterCreator || site.twitterHandle %>" />
+  <meta name="twitter:title" content="<%= meta.title %>" />
+  <meta name="twitter:description" content="<%= meta.description %>" />
+  <meta name="twitter:image" content="<%= meta.ogImage %>" />
+  <meta name="twitter:image:alt" content="<%= meta.ogImageAlt || meta.title %>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <% if (typeof loadHomeAssets !== 'undefined' && loadHomeAssets) { %>
+  <link rel="stylesheet" href="/css/home.css" />
+  <% } %>
+  <% if (typeof productHeadExtras !== 'undefined' && productHeadExtras) { %>
+  <%- productHeadExtras %>
+  <% } %>
+  <link rel="icon" href="/assets/assets/mainfavicon.ico" />
+  <link rel="apple-touch-icon" href="/assets/brand/atomo-logo.png" />
+  <script type="application/ld+json"><%- JSON.stringify(orgJsonLd) %></script>
+  <% if (typeof websiteJsonLd !== 'undefined' && websiteJsonLd) { %>
+  <script type="application/ld+json"><%- JSON.stringify(websiteJsonLd) %></script>
+  <% } %>
+  <% if (typeof jsonLd !== 'undefined' && jsonLd) {
+    const ldScripts = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
+    ldScripts.forEach(function(ld) { %>
+  <script type="application/ld+json"><%- JSON.stringify(ld) %></script>
+  <% }); } %>
+</head>
+<body class="flex min-h-screen flex-col<%= typeof legacyProductLayout !== 'undefined' && legacyProductLayout ? ' legacy-product-layout' : '' %>" style="--font-inter: 'Inter', Arial, Helvetica, sans-serif;">
+  <%- include('partials/header', { path, site }) %>
+  <% if (typeof legacyProductLayout !== 'undefined' && legacyProductLayout) { %>
+  <div class="legacy-product-scroll">
+    <main id="main-content" class="flex-1">
+      <%- body %>
+    </main>
+    <%- include('partials/footer', { site, year }) %>
+  </div>
+  <% } else { %>
+  <main id="main-content" class="flex-1">
+    <%- body %>
+  </main>
+  <%- include('partials/footer', { site, year }) %>
+  <% } %>
+  <script src="/js/header.js" defer></script>
+  <% if (typeof loadHomeAssets !== 'undefined' && loadHomeAssets) { %>
+  <script src="/js/home.js" defer></script>
+  <% } %>
+  <% if (typeof loadContactJs !== 'undefined' && loadContactJs) { %>
+  <script src="/js/contact.js" defer></script>
+  <% } %>
+</body>
+</html>

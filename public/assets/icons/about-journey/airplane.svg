@@ -1,0 +1,17 @@
+<svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <g transform="translate(28 28) rotate(-32) translate(-28 -28)">
+    <path d="M47.5 28l7.5-3v6l-7.5-3z" fill="#111111"/>
+    <path d="M11 28h36.5" stroke="#111111" stroke-width="3" stroke-linecap="round"/>
+    <path d="M16 24.25h30.5a3.75 3.75 0 0 1 0 7.5H16a3 3 0 0 1 0-7.5z" stroke="#111111" stroke-width="2.75" stroke-linejoin="round"/>
+    <path d="M25.5 28V12.5" stroke="#111111" stroke-width="3" stroke-linecap="round"/>
+    <path d="M25.5 28v15.5" stroke="#111111" stroke-width="3" stroke-linecap="round"/>
+    <path d="M17.5 17.5h16" stroke="#111111" stroke-width="2.75" stroke-linecap="round"/>
+    <path d="M11.5 28V17.5" stroke="#111111" stroke-width="3" stroke-linecap="round"/>
+    <path d="M11.5 28v4.5" stroke="#111111" stroke-width="2.75" stroke-linecap="round"/>
+    <ellipse cx="29" cy="31.25" rx="2.4" ry="1.85" stroke="#111111" stroke-width="2.25"/>
+    <ellipse cx="35.5" cy="31.25" rx="2.4" ry="1.85" stroke="#111111" stroke-width="2.25"/>
+    <circle cx="38.5" cy="26.75" r="1.35" fill="#111111"/>
+    <circle cx="41.5" cy="26.75" r="1.35" fill="#111111"/>
+    <circle cx="44.25" cy="26.75" r="1.1" fill="#111111"/>
+  </g>
+</svg>

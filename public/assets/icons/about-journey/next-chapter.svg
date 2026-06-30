@@ -1,0 +1,10 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <g transform="translate(24 24) rotate(-38) translate(-24 -24)">
+    <path fill="#111111" d="M7.5 23.2 11.8 20.6 11.5 27.4 7.5 24.8Z"/>
+    <path fill="#111111" d="M11.2 19.2 15.8 16.8 15.2 31.2 11.2 28.8Z"/>
+    <path fill="#111111" d="M15.5 18.2h19.8l1.8 5.8-1.8 5.8H15.5l-1.2-5.8 1.2-5.8Z"/>
+    <path fill="#111111" d="M35.3 17.4 43.8 24 35.3 30.6Z"/>
+    <path fill="#111111" d="M17.2 18.2 13.8 12.8 19.2 19.2Z"/>
+    <path fill="#111111" d="M17.2 29.8 13.8 35.2 19.2 28.8Z"/>
+  </g>
+</svg>

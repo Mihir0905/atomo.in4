@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="gov-indep" x1="16" y1="10" x2="56" y2="62" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fb923c"/>
+      <stop offset="1" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+  <path d="M36 10c-8 10-12 17-12 24a12 12 0 1 0 24 0c0-7-4-14-12-24Z" stroke="url(#gov-indep)" stroke-width="2.8" stroke-linejoin="round"/>
+  <path d="M36 38v16" stroke="url(#gov-indep)" stroke-width="2.8" stroke-linecap="round"/>
+  <path d="M28 54h16" stroke="url(#gov-indep)" stroke-width="2.8" stroke-linecap="round"/>
+  <path d="M20 18l4 2M52 18l-4 2M14 30h4M54 30h4" stroke="#fdba74" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="36" cy="30" r="3.5" fill="#f97316"/>
+</svg>
