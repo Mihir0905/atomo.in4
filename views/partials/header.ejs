@@ -84,24 +84,41 @@
   </div>
 </header>
 
-<div id="mobile-nav" class="fixed inset-0 z-40 hidden flex-col bg-[rgba(3,7,13,0.98)] backdrop-blur-lg lg:hidden" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-  <div class="container-site flex flex-1 flex-col overflow-y-auto pt-20 pb-8">
-    <nav class="space-y-2">
-      <% primaryNav.forEach(function(item) { %>
-      <details class="group rounded-xl border border-white/10">
-        <summary class="flex cursor-pointer list-none items-center justify-between px-4 py-4 text-base font-medium text-light-text [&::-webkit-details-marker]:hidden">
-          <%= item.label %>
-          <svg class="h-5 w-5 text-silver transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-        </summary>
-        <div class="space-y-0.5 border-t border-white/10 px-2 py-2">
-          <a href="<%= item.href %>" class="block rounded-lg px-3 py-3 text-base font-medium text-light-text">Overview</a>
-          <% if (item.children) { item.children.forEach(function(child) { %>
-          <a href="<%= child.href %>" class="block rounded-lg px-3 py-3 text-base text-silver hover:bg-white/5 hover:text-light-text"><%= child.label %></a>
-          <% }); } %>
+<div id="mobile-nav" class="mobile-nav fixed inset-0 z-40 flex flex-col lg:hidden" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
+  <div class="mobile-nav__content container-site flex flex-1 flex-col overflow-y-auto pt-20 pb-8">
+    <nav class="mobile-nav__list space-y-2">
+      <% primaryNav.forEach(function(item, navIndex) { %>
+      <div class="mobile-nav__item" data-mobile-nav-item style="--nav-stagger: <%= navIndex %>">
+        <button
+          type="button"
+          class="mobile-nav__trigger"
+          data-mobile-nav-trigger
+          aria-expanded="false"
+          aria-controls="mobile-nav-panel-<%= navIndex %>"
+        >
+          <span class="mobile-nav__trigger-label"><%= item.label %></span>
+          <span class="mobile-nav__chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div
+          class="mobile-nav__panel"
+          id="mobile-nav-panel-<%= navIndex %>"
+          data-mobile-nav-panel
+          hidden
+        >
+          <div class="mobile-nav__panel-inner">
+            <a href="<%= item.href %>" class="mobile-nav__link mobile-nav__link--overview" style="--nav-stagger: 0">Overview</a>
+            <% if (item.children) { item.children.forEach(function(child, childIndex) { %>
+            <a href="<%= child.href %>" class="mobile-nav__link" style="--nav-stagger: <%= childIndex + 1 %>"><%= child.label %></a>
+            <% }); } %>
+          </div>
         </div>
-      </details>
+      </div>
       <% }); %>
     </nav>
-    <div class="mt-8 pb-4"><a href="/contact" class="btn-primary w-full justify-center flex">Talk to Atomo</a></div>
+    <div class="mobile-nav__footer mt-8 pb-4" style="--nav-stagger: <%= primaryNav.length %>">
+      <a href="/contact" class="btn-primary mobile-nav__cta w-full justify-center flex">Talk to Atomo</a>
+    </div>
   </div>
 </div>
