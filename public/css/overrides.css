@@ -1,0 +1,27 @@
+/* Small, surgical tweaks layered on top of generated styles.css */
+
+/* Center mega-menu items so hover/active state looks aligned. */
+.nav-mega__link {
+  text-align: center;
+  align-items: center;
+}
+
+.nav-mega__link-desc {
+  text-align: center;
+}
+
+/* Keep top-level dropdown tabs highlighted as one centered pill (label + chevron). */
+.site-header__trigger[data-has-dropdown="true"] .nav-link {
+  background-color: transparent !important;
+}
+
+.site-header__trigger[data-has-dropdown="true"]:hover .site-header__trigger-row,
+.site-header__trigger.is-active .site-header__trigger-row {
+  background-color: var(--nav-hover-bg);
+}
+
+.site-header__trigger[data-has-dropdown="true"]:hover .nav-link,
+.site-header__trigger.is-active .nav-link {
+  color: #47a0e9 !important;
+  background-color: transparent !important;
+}
