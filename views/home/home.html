@@ -2482,6 +2482,10 @@
               return;
             }
             nextVideo.addEventListener('playing', onPlaying);
+            window.setTimeout(() => {
+              nextVideo.removeEventListener('playing', onPlaying);
+              if (advancing) finishSwap();
+            }, 1200);
           })
           .catch(() => {
             advancing = false;
