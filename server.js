@@ -11,7 +11,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
+app.set("views", [path.join(__dirname, "views"), path.join(__dirname, "case_studies_page")]);
 app.engine("html", ejs.__express);
 app.locals.primaryNav = primaryNav;
 app.locals.footerColumns = footerColumns;
@@ -42,6 +42,12 @@ app.use("/ai3", express.static(path.join(__dirname, "ai3")));
 app.use("/ai4", express.static(path.join(__dirname, "ai4")));
 app.use("/images", express.static(path.join(__dirname, "images")));
 app.use("/section2icon", express.static(path.join(__dirname, "section2icon")));
+app.use("/carrier_page", express.static(path.join(__dirname, "carrier_page")));
+app.use("/about_page", express.static(path.join(__dirname, "about_page")));
+app.use("/atomicos_page", express.static(path.join(__dirname, "atomicos_page")));
+app.use("/presskit_page", express.static(path.join(__dirname, "presskit_page")));
+app.use("/blogs", express.static(path.join(__dirname, "blogs")));
+app.use("/case_studies_page", express.static(path.join(__dirname, "case_studies_page")));
 
 app.use("/api", apiRouter);
 app.use(pagesRouter);

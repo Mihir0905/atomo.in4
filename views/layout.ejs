@@ -38,6 +38,31 @@
   <% if (typeof loadHomeAssets !== 'undefined' && loadHomeAssets) { %>
   <link rel="stylesheet" href="/css/home.css" />
   <% } %>
+  <% if (typeof loadCareersAssets !== 'undefined' && loadCareersAssets) { %>
+  <link rel="stylesheet" href="/carrier_page/carrier.css?v=1763552575863" />
+  <link href="https://rsms.me/inter/inter.css?v=1763552575863" rel="stylesheet" />
+  <% } %>
+  <% if (typeof loadAtomicosAssets !== 'undefined' && loadAtomicosAssets) { %>
+  <link rel="stylesheet" href="/atomicos_page/atomicos.css?v=1763552575863" />
+  <link href="https://rsms.me/inter/inter.css?v=1763552575863" rel="stylesheet" />
+  <% } %>
+  <% if (typeof loadPressKitAssets !== 'undefined' && loadPressKitAssets) { %>
+  <link rel="stylesheet" href="/presskit_page/press.css?v=1763552575863" />
+  <link href="https://rsms.me/inter/inter.css?v=1763552575863" rel="stylesheet" />
+  <% } %>
+  <% if (typeof loadBlogsAssets !== 'undefined' && loadBlogsAssets) { %>
+  <link rel="stylesheet" href="/blogs/blogs.css?v=1763552575863" />
+  <link href="https://rsms.me/inter/inter.css?v=1763552575863" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css?v=1763552575863" rel="stylesheet" />
+  <% } %>
+  <% if (typeof loadBlogDetailAssets !== 'undefined' && loadBlogDetailAssets) { %>
+  <link rel="stylesheet" href="/blogs/blog-detail.css?v=1763552575863" />
+  <link href="https://rsms.me/inter/inter.css?v=1763552575863" rel="stylesheet" />
+  <% } %>
+  <% if (typeof loadCaseStudiesAssets !== 'undefined' && loadCaseStudiesAssets) { %>
+  <link rel="stylesheet" href="/case_studies_page/case-studies.css?v=1" />
+  <link href="https://rsms.me/inter/inter.css?v=1763552575863" rel="stylesheet" />
+  <% } %>
   <% if (typeof productHeadExtras !== 'undefined' && productHeadExtras) { %>
   <%- productHeadExtras %>
   <% } %>
@@ -74,6 +99,24 @@
   <% } %>
   <% if (typeof loadContactJs !== 'undefined' && loadContactJs) { %>
   <script src="/js/contact.js" defer></script>
+  <% } %>
+  <% if (typeof loadCareersAssets !== 'undefined' && loadCareersAssets) { %>
+  <script src="/carrier_page/carrier.js?v=2.2" defer></script>
+  <% } %>
+  <% if (typeof loadAtomicosAssets !== 'undefined' && loadAtomicosAssets) { %>
+  <script src="/atomicos_page/atomicos.js?v=2.2" defer></script>
+  <% } %>
+  <% if (typeof loadPressKitAssets !== 'undefined' && loadPressKitAssets) { %>
+  <script src="/presskit_page/press.js?v=2.2" defer></script>
+  <% } %>
+  <% if (typeof loadBlogsAssets !== 'undefined' && loadBlogsAssets) { %>
+  <script src="/blogs/blogs.js?v=2.2" defer></script>
+  <% } %>
+  <% if (typeof loadBlogDetailAssets !== 'undefined' && loadBlogDetailAssets) { %>
+  <script src="/blogs/blog-detail.js?v=2.2" defer></script>
+  <% } %>
+  <% if (typeof loadCaseStudiesAssets !== 'undefined' && loadCaseStudiesAssets) { %>
+  <script src="/case_studies_page/case-studies.js?v=1" defer></script>
   <% } %>
 </body>
 </html>

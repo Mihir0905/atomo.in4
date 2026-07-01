@@ -1,0 +1,27 @@
+<style>
+  .blog-detail-page #blog-detail {
+    padding-top: var(--nav-height, 60px);
+  }
+</style>
+
+<div class="blog-detail-page">
+  <section id="blog-detail">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; padding-bottom: 2vh;">
+      <a href="/resources/blogs" class="read-more">← Back to Blogs</a>
+      <div class="card">
+        <div class="card-header">
+          <h2 id="blog-title"></h2>
+          <h3 id="blog-subtitle"></h3>
+        </div>
+        <div class="card-body">
+          <div class="author">
+            <img id="blog-author-img" src="" alt="Author Image" />
+            <span id="blog-author"></span>
+          </div>
+          <p id="blog-date" class="date"></p>
+          <div id="blog-content"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
